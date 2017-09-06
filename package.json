@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Cordova Plugin for Speech Recognition",
   "cordova": {
-    "id": "cordova-plugin-speechrecognition",
+    "id": "cordova-plugin-speechrecognition-lb",
     "platforms": [
       "android",
       "ios"
