@@ -157,6 +157,10 @@
 - (void)stopListening:(CDVInvokedUrlCommand*)command {
     [self.commandDelegate runInBackground:^{
         NSLog(@"stopListening()");
+      
+        AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+        [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptions.DefaultToSpeaker error:nil];
+        [audioSession overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:nil];
 
         if ( self.audioEngine.isRunning ) {
             [self.audioEngine stop];
