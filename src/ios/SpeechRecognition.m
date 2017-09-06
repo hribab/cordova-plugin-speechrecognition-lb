@@ -164,7 +164,8 @@
             [self.recognitionRequest endAudio];
         }
       
-       [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionDefaultToSpeaker error: nil];
+       [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionMixWithOthers|AVAudioSessionCategoryOptionDefaultToSpeaker error: nil];
+       [[AVAudioSession sharedInstance] overrideOutputAudioPort:AVAudioSessionCategoryOptionDefaultToSpeaker  error:nil];
 
 
 
